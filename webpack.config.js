@@ -10,8 +10,8 @@ const PAGES = [
 const PATHS = {
   dist: path.resolve(__dirname, './dist'),
   src: path.resolve(__dirname, './src'),
-  //assets: path.join(ROOT, 'src/assets'),
-  //styles: path.join(__dirname, 'src/styles')
+  media: path.join(__dirname, 'src/media'),
+  styles: path.join(__dirname, 'src/styles')
 };
 
 module.exports = {
@@ -23,9 +23,13 @@ module.exports = {
 
     output: {
         path: PATHS.dist,
-        filename: 'js/[name].js'
+        filename: 'js/[name].js',
+        assetModuleFilename: 'assets/[name][ext]'
     },
-
+    experiments: {
+        asset: true
+    },
+        
     module: {
         rules: [
             {
@@ -64,8 +68,19 @@ module.exports = {
                     }
                 ]
             },
-
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+                use: 'svgo-loader'
+            },
         ]
+    },
+
+    resolve: {
+        alias: {
+            media: PATHS.media,
+            styles: PATHS.styles
+        }
     },
 
     plugins:
