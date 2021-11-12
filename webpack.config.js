@@ -10,21 +10,23 @@ const PAGES = [
 const PATHS = {
   dist: path.resolve(__dirname, './dist'),
   src: path.resolve(__dirname, './src'),
-  media: path.join(__dirname, 'src/media'),
-  styles: path.join(__dirname, 'src/styles')
+  media: path.resolve(__dirname, './src/media'),
+  styles: path.resolve(__dirname, './src/styles'),
+  parts: path.resolve(__dirname, './src/parts')
 };
 
 module.exports = {
     entry: (() => {
         const entries = {};
-        PAGES.forEach(page => entries[page] = PATHS.src + `/pug/pages/${page}/${page}.js`);
+        PAGES.forEach(page => entries[page] = PATHS.src + `/pages/${page}/${page}.js`);
         return entries;
     })(),
 
     output: {
         path: PATHS.dist,
         filename: 'js/[name].js',
-        assetModuleFilename: 'assets/[name][ext]'
+        assetModuleFilename: 'assets/[name][ext]',
+        clean: true
     },
     experiments: {
         asset: true
@@ -79,14 +81,19 @@ module.exports = {
     resolve: {
         alias: {
             media: PATHS.media,
-            styles: PATHS.styles
+            styles: PATHS.styles,
+            parts: PATHS.parts
         }
     },
-
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
     plugins:
         PAGES.map((page) =>
             new HtmlWebpackPlugin({
-                template: PATHS.src + `/pug/pages/${page}/${page}.pug`,
+                template: PATHS.src + `/pages/${page}/${page}.pug`,
                 filename: `${page}.html`,
                 chunks: ['common', page],
                 inject: 'body',
