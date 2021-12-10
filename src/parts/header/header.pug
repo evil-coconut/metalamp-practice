@@ -2,7 +2,7 @@ header.header
   .header__container._container
     .header__img.img
       img.img__logo(src=require('../../media/images/Group.svg') alt='logo')
-      img.img__text-logo(src=require('../../media/images/TOXIN.svg') alt='logo_name' width="53px" height="13px")
+      img.img__text-logo(src=require('../../media/images/TOXIN.svg') alt='logo_name')
     .header__menu.menu
       .menu__icon.icon-menu
         span
@@ -12,8 +12,17 @@ header.header
         ul.menu__list
           li
             a.menu__link(href='#') О нас
-          li
-            a.menu__link(href='#') Услуги
+          li.menu-dropdown
+            .dropdown-inner
+              a.menu__link.dropdown_link(href='#') Услуги
+              span.arrow
+              ul.sub-menu__list
+                li
+                  a.sub-menu__link(href='#') Ссылка 1
+                li
+                  a.sub-menu__link(href='#') Ссылка 2
+                li
+                  a.sub-menu__link(href='#') Ссылка 3
           li
             a.menu__link(href='#') Вакансии
           li

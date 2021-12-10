@@ -1,2 +1,9 @@
 @import "~styles/main";
 @import "~parts/header/header.scss";
+@import "~parts/footer/footer.scss";
+
+.main {
+	min-height: 830px;
+	background: url(../../media/images/background.png) no-repeat;
+	margin: 0 auto;
+}
