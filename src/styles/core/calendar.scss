@@ -1,0 +1,100 @@
+.air-datepicker {
+	--adp-font-family: -apple-system, BlinkMacSystemFont, $fontFamily, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--adp-font-size: 12px;
+
+	--adp-width: 320px;
+	--adp-padding: 10px;
+
+	--adp-background-color-hover: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	--adp-background-color-active: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+	--adp-background-color-in-range: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	--adp-background-color-in-range-focused: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	--adp-cell-background-color-in-range: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
+	--adp-cell-background-color-in-range-hover: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	
+	--adp-color:  #1F204180;
+
+	--adp-accent-color: background: #BC9CFF;
+	--adp-color-other-month: #1F204140;
+	--adp-border-color: rgba(31, 32, 65, 0.25);
+	--adp-border-color-inner: #ffffff00;
+	--adp-nav-height: 20px;
+	--adp-nav-action-size: 20px;
+	--adp-day-name-color: #BC9CFF;
+	--adp-day-cell-height: 40px;
+	--adp-pointer-size: 0px;
+	--adp-cell-border-radius: 50%;
+	--adp-cell-background-color-selected: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	--adp-cell-background-color-selected-hover: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.air-datepicker-cell.-current- {
+	color: #fff;
+	background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+.air-datepicker-cell.-range-from- {
+  border-radius: var(--adp-cell-border-radius) 0 0 var(--adp-cell-border-radius);
+  background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
+}
+
+.air-datepicker-cell.-range-from-::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  z-index: -1;
+}
+
+.air-datepicker-cell.-range-from-.-selected- {
+  border-radius: var(--adp-cell-border-radius) 0 0 var(--adp-cell-border-radius);
+  background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
+}
+
+.air-datepicker-cell.-range-to- {
+  border-radius: 0 var(--adp-cell-border-radius) var(--adp-cell-border-radius) 0;
+  background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
+}
+
+.air-datepicker-cell.-range-to-::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  z-index: -1;
+}
+
+.air-datepicker-cell.-range-to-.-selected- {
+  border-radius: 0 var(--adp-cell-border-radius) var(--adp-cell-border-radius) 0;
+  background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
+}
+
+.air-datepicker-cell.-range-from-.-range-to- {
+	border-radius: 50%;
+}
+
+.air-datepicker-cell.-in-range-.-focus- {
+	background: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
+	border-radius: 0;
+}
+
+.air-datepicker-cell.-in-range-.-focus-::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  z-index: -1;
+}
