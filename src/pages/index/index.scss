@@ -1,9 +1,82 @@
-@import "~styles/main";
+@import "~styles/main.scss";
 @import "~parts/header/header.scss";
 @import "~parts/footer/footer.scss";
+@import "../../../node_modules/air-datepicker/air-datepicker.css";
+@import "~styles/core/calendar.scss";
 
 .main {
-	min-height: 830px;
 	background: url(../../media/images/background.png) no-repeat;
-	margin: 0 auto;
+	background-position: 50% 50%;
+	min-height: 830px;
+	padding: 70px 0px 0px 0px;
+	&__content {
+		position: relative;	
+	}
+	&__number-selection-window {
+			
+	}
+	&__text {
+		width: 297px;
+		height: 48px;
+		position: absolute;
+    	right: 0;
+    	top: 694px;
+    	line-height: 24px;
+		text-align: right;
+		color: rgba(31, 32, 65, 0.75);
+	}
+}
+
+.number-selection-window {
+	&__container {
+		width: 380px;
+		height: 374px;
+		background-color: #fff;
+		border: 1px solid rgba(0, 0, 0, 0.12);
+		box-sizing: border-box;
+		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+		border-radius: 4px;
+		padding: 40px 30px 30px 30px;
+
+	}
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__title {
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 29px;
+		color: $mainColorOfHeaders;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		input[type=text] {
+		    font-size: 14px;
+		    color: #1F2041BF;
+		    line-height: 24px;
+		}
+	}
+	&__arrival {
+		margin: 21px 0px 5px 0px;
+		@include style-for-third-level-headings;
+	}
+	&__arrival-input {
+		transition-duration: 0.5s;
+		padding-left: 15px;
+	}
+}
+._input-for-selection-window {
+	width: 150px;
+	height: 44px;
+	background: #FFFFFF;
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	box-sizing: border-box;
+	border-radius: 4px;	
+}
+ 
+input:focus, input:hover {
+	border: 1px solid rgba(31, 32, 65, 0.5);
+	box-shadow: 0px 0px 2px 2px rgba(82,82,82,0.09);
 }
