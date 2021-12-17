@@ -15,10 +15,12 @@ html(lang='ru')
               .number-selection-window__inner
                 form.number-selection-window__form
                   label.number-selection-window__arrival(for='arrival') прибытие
-                  input#calendar.number-selection-window__arrival-input._input-for-selection-window(type='text' placeholder='ДД.ММ.ГГГГ' data-range='true' data-multiple-dates-separator=' - ')
+                  input#input-arrival.calendar.number-selection-window__arrival-input._input-for-selection-window(type='text' placeholder='ДД.ММ.ГГГГ')
                 form.number-selection-window__form
-                  label.number-selection-window__arrival(for='arrival') выезд
-                  input.number-selection-window__arrival-input._input-for-selection-window(type='text' placeholder='ДД.ММ.ГГГГ')  
+                  label.number-selection-window__arrival(for='departure') выезд
+                  input#input-departure.calendar.number-selection-window__arrival-input._input-for-selection-window(type='text' placeholder='ДД.ММ.ГГГГ')  
+              .selection-of-the-number-of-guests
+
           .main__text
             p Лучшие номера для вашей работы, отдыха и просто вдохновения
       include ../../parts/footer/footer.pug     

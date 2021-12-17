@@ -1,5 +1,5 @@
 .air-datepicker {
-	--adp-font-family: -apple-system, BlinkMacSystemFont, $fontFamily, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--adp-font-family: -apple-system, $fontFamily, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--adp-font-size: 12px;
 
 	--adp-width: 320px;
@@ -13,9 +13,9 @@
 	--adp-cell-background-color-in-range: linear-gradient(180deg, #BC9CFF40 0%, #8BA4F940 100%);
 	--adp-cell-background-color-in-range-hover: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	
-	--adp-color:  #1F204180;
+	--adp-color:  #1F204180;//цвет цифр в месяце
 
-	--adp-accent-color: background: #BC9CFF;
+	--adp-accent-color: #BC9CFF; //цвет текста в кнопке 
 	--adp-color-other-month: #1F204140;
 	--adp-border-color: rgba(31, 32, 65, 0.25);
 	--adp-border-color-inner: #ffffff00;
@@ -29,6 +29,14 @@
 	--adp-cell-background-color-selected-hover: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
+.air-datepicker-body--day-name {
+	font-weight: bold;
+	line-height: 15px;
+}
+.air-datepicker-nav--title:hover, .air-datepicker-nav--title:active, .air-datepicker-nav--action:hover {
+	background: #fff
+}
+
 .air-datepicker-cell.-current- {
 	color: #fff;
 	background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
