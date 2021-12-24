@@ -9,18 +9,45 @@ html(lang='ru')
       include ../../parts/header/header.pug
       main.main
         .main__content._container
-          .main__number-selection-window
+          form.number-selection-window
             .number-selection-window__container
               h3.number-selection-window__title Найдём номера под ваши пожелания
               .number-selection-window__inner
-                form.number-selection-window__form
-                  label.number-selection-window__arrival(for='arrival') прибытие
-                  input#input-arrival.calendar.number-selection-window__arrival-input._input-for-selection-window(type='text' placeholder='ДД.ММ.ГГГГ')
-                form.number-selection-window__form
-                  label.number-selection-window__arrival(for='departure') выезд
-                  input#input-departure.calendar.number-selection-window__arrival-input._input-for-selection-window(type='text' placeholder='ДД.ММ.ГГГГ')  
+                .number-selection-window__form
+                  label.number-selection-window__arrival(for='input-arrival') прибытие
+                  input#input-arrival._input-for-selection-window(type='text' placeholder='ДД.ММ.ГГГГ')
+                .number-selection-window__form
+                  label.number-selection-window__arrival(for='input-departure') выезд
+                  input#input-departure._input-for-selection-window(type='text' placeholder='ДД.ММ.ГГГГ')  
               .selection-of-the-number-of-guests
-
+                label.selection-of-the-number-of-guests__label(for='input-guests') гости
+                input#input-guests._input-for-selection-window(type='text' placeholder='Сколько гостей')
+                .sub-menu_input-guests
+                  .sub-menu__guests
+                    span взрослые
+                    .sub-menu_guests
+                      button -
+                      span 0
+                      button +
+                  .sub-menu__guests
+                    span дети
+                    .sub-menu_guests
+                      button -
+                      span 0
+                      button +
+                  .sub-menu__guests
+                    span младенцы
+                    .sub-menu_guests
+                      button -
+                      span 0
+                      button +
+                  .sub-menu_button
+                    button.sub-menu_to-clear очистить
+                    button.sub-menu_to-apply применить
+              .button-in-the-selection-window
+                a(href='#')
+                  button.button-in-the-selection-window__button() подобрать номер
+                  i._icon-arrow_forward
           .main__text
             p Лучшие номера для вашей работы, отдыха и просто вдохновения
       include ../../parts/footer/footer.pug     

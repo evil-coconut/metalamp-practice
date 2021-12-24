@@ -13,7 +13,7 @@
 		position: relative;	
 	}
 	&__number-selection-window {
-			
+		
 	}
 	&__text {
 		width: 297px;
@@ -52,6 +52,7 @@
 	&__form {
 		display: flex;
 		flex-direction: column;
+		width: 150px;
 		input[type=text] {
 		    font-size: 14px;
 		    color: #1F2041BF;
@@ -62,21 +63,111 @@
 		margin: 21px 0px 5px 0px;
 		@include style-for-third-level-headings;
 	}
-	&__arrival-input {
-		transition-duration: 0.5s;
-		padding-left: 15px;
-	}
+	
 }
 ._input-for-selection-window {
-	width: 150px;
+	width: 100%;
 	height: 44px;
 	background: #FFFFFF;
 	border: 1px solid rgba(31, 32, 65, 0.25);
 	box-sizing: border-box;
 	border-radius: 4px;	
+	transition-duration: 0.5s;
+	padding-left: 15px;
 }
- 
+
+.selection-of-the-number-of-guests {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-top: 21px;
+	&__label {
+		margin: 0px 0px 5px 0px;
+		@include style-for-third-level-headings;
+	}
+	input:hover {
+		cursor: pointer;
+	}
+}
+.button-in-the-selection-window {
+	position: relative;
+	margin: 31px 0px 0px 0px;
+	&__button {
+		@include styleForButtonWithBackground;
+		width: 100%;
+		padding: 15px;
+	}
+
+}
+
 input:focus, input:hover {
 	border: 1px solid rgba(31, 32, 65, 0.5);
 	box-shadow: 0px 0px 2px 2px rgba(82,82,82,0.09);
+}
+._icon-arrow_forward{
+	font-size: 19px;
+	position: absolute;
+	top: 13px;
+	left: 289px;
+	color: #fff;
+	cursor: pointer;
+}
+#input-guests:focus {
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.sub-menu_input-guests {
+	display: none; 
+	position: absolute;
+	top: 60px;
+	left: 0;
+	width: 318px;
+	height: 159px;
+	background: #FFFFFF;
+	border: 1px solid rgba(31, 32, 65, 0.5);
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	border-radius: 0px 0px 4px 4px;
+	padding: 8px 7px 13px 15px;
+	z-index: 5;
+	.sub-menu__guests {
+		margin-bottom: 7px;
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		.sub-menu_guests button{
+			width: 30px;
+			height: 30px;
+			border-radius: 22px;
+			border: 1px solid rgba(31, 32, 65, 0.25);
+			color: rgba(31, 32, 65, 0.5);
+			background-color: #fff;
+		}
+		.sub-menu_guests span {
+			margin: 0px 7px 0px 10px;
+		}
+	}
+	span {
+		@include style-for-third-level-headings;
+	}
+}
+.sub-menu_button {
+	margin-top: 19px;
+	display: flex;
+	justify-content: space-between;
+	button {
+		background-color: #fff;
+		color: #BC9CFF;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+	}
+	.sub-menu_to-clear {
+
+	}
+	.sub-menu_to-apply {
+		
+	}
+}
+._touch-input {
+	display: block;
 }
