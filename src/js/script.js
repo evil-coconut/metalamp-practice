@@ -42,6 +42,12 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('.menu-dropdown').click(function(event) {
-        $('.sub-menu__list,.arrow,.menu-dropdown').toggleClass('_touch');
+        $('.sub-menu__list,._icon-expand_more,.menu-dropdown').toggleClass('_touch');
+    });
+});
+
+$(document).ready(function() {
+    $('#input-guests').click(function(event) {
+        $('.sub-menu_input-guests').toggleClass('_touch-input');
     });
 });
